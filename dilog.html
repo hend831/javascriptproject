@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+        <head>
+            <title>E-commerce website</title>
+            <link rel="stylesheet" href="style.css">
+            <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <script src="jquery-3.7.0.js"></script>
+            <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<style>
+    body{
+        background-image: url("images/blog/b3.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    div h2{
+        align-items: center;
+        color:yellow;
+        margin-top:40vh;
+    }
+    #tn{
+        background: #088178;
+        color:aliceblue;
+        margin-top:25px;
+        transition: 2s;
+      
+    }
+    #tn:hover{
+        width: 200px;
+        height: 50px;
+       
+        color:black;
+    }
+    body {
+    
+   
+    height: 100vh; 
+ 
+}
+
+.center {
+    text-align: center; /* Center text horizontally */
+}
+</style>
+        </head>
+
+<body>
+    <section>
+        <header id="header" class="sticky-header">
+          <div class="logo">HDH Store</div>
+          <nav>
+            <input type="checkbox" id="checkkk">
+            <label for="checkkk">
+              <i class="fas fa-bars" id="btn55"></i>
+              <i class="fas fa-times" id=cancel55 ></i>
+              <ul id="ulll">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a class="blog.html"  href="#">Blog</a></li>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="#" class="active"><i class="fas fa-shopping-cart "></i></a></li>
+            </ul>
+          </nav>
+        </header>
+      </section>
+    <div class="center">
+        
+    <h2>Glad to receive your order</h2> 
+        <button id="tn" class="normal" onclick="openHomePage()">go to home page</button></center>
+    </div>
+
+
+
+<script>
+  function openHomePage(){
+    window.open("index.html");
+    localStorage.removeItem('Info');
+    localStorage.removeItem('cartItems');
+    
+  }
+</script>
+
+</body>
+</html>

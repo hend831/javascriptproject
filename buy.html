@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>E-commerce website cart page</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery-3.7.0.js"></script>
+    <style>
+        body{
+            background: #088178;
+            background-image: url("images/blog/b4.jpg");
+           background-repeat: no-repeat;
+           background-size: cover;
+           height: 100vh;
+           opacity: 0.5;
+        }
+        
+        input{
+            display: block;
+            padding: 10px;
+  border: 1px solid #ccc;
+ 
+  font-size: 16px;
+  width: 350px;
+  margin-bottom: 7px;
+  border-radius: 7px;
+  color:red;
+        }
+        input:focus {
+  border-color: #088178;
+  box-shadow: 0 0 5px rgba(45, 124, 98, 0.5);
+}
+input::placeholder {
+  color: red;
+}
+        #divOne{
+           transform:translate(95%,200px);
+           background: black;
+           width:450px;
+           padding: 40px;
+          
+        }
+        #divOne select{
+            color: red;
+            height: 40px;
+            width: 350px;
+            margin-bottom: 7px;
+            border-radius: 7px;
+        }
+        option{
+            height: 40px;
+        }
+        button{
+           margin-left: 240px;
+        }
+        @media only screen and (max-width: 900px) {
+            #divOne{
+                transform:translate(5%,100px);
+           background: black;
+           width:70%;
+           padding: 20px;
+            }
+                 
+        input{
+           
+            padding: 10px;
+  
+ 
+ 
+  width: 90%;
+ 
+ 
+        }
+        #divOne select{
+          
+            height: 40px;
+            width: 90%;
+        
+        }
+        button{
+           margin-left: 8px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header id="header" class="sticky-header">
+          <div class="logo">HDH Store</div>
+          <nav>
+            <input type="checkbox" id="checkkk">
+            <label for="checkkk">
+              <i class="fas fa-bars" id="btn55"></i>
+              <i class="fas fa-times" id=cancel55 ></i>
+              <ul id="ulll">
+              <li><a  href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="blog.html">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#" class="active" href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+          </nav>
+        </header>
+      </section>
+
+<div id="divOne"></div>
+
+
+     <script >
+        
+   // Create a new div element
+   const newDiv = document.createElement("div");
+
+const h4Element = document.createElement("input");
+h4Element.type = "text";
+h4Element.pattern="[A-Za-z]+";
+h4Element.placeholder="enter your name";
+ 
+
+
+const inputElement1 = document.createElement("input");
+ inputElement1.type = "text";
+ inputElement1.placeholder="enter your address"
+// Create option list with 4 options
+const selectElement = document.createElement("select");
+var visa= document.createElement("i");
+
+var arr=[  "visa","master card","paypal","cash"];
+for (let i = 0; i <= arr.length; i++) {
+    const option = document.createElement("option");
+    option.value = arr[i];
+    option.textContent = arr[i];
+
+    selectElement.appendChild(option);
+    
+}
+
+// Create input element of type number
+
+
+const inputElement = document.createElement("input");
+inputElement.type = "number";
+inputElement.id=("inputField");
+var inp =inputElement.value;
+inputElement.placeholder="enter your card number"
+
+
+
+// Create button element
+const buttonElement = document.createElement("button");
+buttonElement.id=("btninp");
+buttonElement.textContent = "Submit";
+buttonElement.classList.add("normal");
+// Append all created elements to the newDiv
+newDiv.appendChild(h4Element);
+newDiv.appendChild(inputElement1);
+newDiv.appendChild(selectElement);
+newDiv.appendChild(inputElement);
+newDiv.appendChild(buttonElement);
+
+// Append the newDiv to the element with ID "divOne"
+const targetDiv = document.getElementById("divOne");
+targetDiv.appendChild(newDiv);
+
+
+
+document.getElementById("btninp").addEventListener("click", function() {
+    var inp = document.getElementById("inputField").value;
+    
+    if (inp.length === 11 && !isNaN(inp)) {
+        
+    } else {
+        alert("Please enter a valid 11-digit number.");
+    }
+});
+
+
+
+document.getElementById("btninp").addEventListener("click", function() {
+    var inputs = document.querySelectorAll("input"); // Get all input elements
+    var allInputsFilled = true;
+
+    // Check if any input field is empty
+    for (var i = 0; i < inputs.length; i++) {
+        if (inputs[i].value === "") {
+            allInputsFilled = false;
+            break;
+        }
+    }
+
+    if (allInputsFilled) {
+        alert("the request is being processed ");
+        
+        window.open("dilog.html")
+    } else {
+        alert("Please fill in all input fields.");
+    }
+});
+
+
+
+
+
+
+
+     </script>
+
+
+</body>
+</html>
